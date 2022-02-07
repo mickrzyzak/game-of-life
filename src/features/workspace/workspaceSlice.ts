@@ -19,8 +19,9 @@ export const workspaceSlice = createSlice({
   reducers: {
     setSize: (state, action: PayloadAction<{ x: number, y: number }>) => {
       state.size = action.payload;
-      state.liveCells = [];
-      state.generation = 0;
+      state.liveCells = state.liveCells.filter(
+        cell => cell.x < action.payload.x && cell.y < action.payload.y
+      );
     },
     setPattern: (state, action: PayloadAction<
       { size: { x: number, y: number }, json: string }

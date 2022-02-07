@@ -9,6 +9,7 @@ const App = () => {
       spacing={0}
       sx={{
         height: '100vh',
+        minHeight: 400,
         maxHeight: '100vh',
         flexDirection: { xs: 'column', sm: 'row' }
       }}
